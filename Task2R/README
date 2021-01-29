@@ -1,0 +1,46 @@
+<Python Library Requirement>
+
+brian2
+
+
+#Main experiment
+
+master file: implement.py  - start calculation with parallel computing 
+
+wave+Dt:  pthrec_nobl.py
+wave only: pthrec_nowvbl.py
+Dt only:  pthrec_nostbl.py
+conventional: pthrec_org.py
+
+###Output file
+
+- pthrecsetup_xxxxx.pkl
+ii1: An array of neuron index of pre-sinaptic neurons
+jj1: An array of neuron index of post-sinaptic neurons
+nrnx: An array of X-axis positions in order of the neuron index
+nrny: An array of Y-axis positions in order of the neuron index
+input_indices: An array of neuron index at external stimuli
+input_times: An array of external input timing
+
+- pthrecresult_xxxxx.pkl
+exc_s.s: An array of synaptic weights at the last state
+weighte_init: An array of synaptic weights at the initial setting
+M.t: An array of firing timing of every neuron
+M.i: An array of neuron index at firing timing recoded in M.t
+Mdopa.prefer: the value of correct (= 1) or wrong (= 0) at each trial.
+Mdopa.crr: the value of 1-Novelty
+Mgl2.d: the amout of reward
+
+
+
+#Analysis
+
+analysis file: analysis.py
+
+
+###Output file
+
+- pthrec_sum.pkl  
+master:   successful rate
+fspk:     the first spike latency
+master3:  the amout of reward

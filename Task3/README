@@ -1,0 +1,42 @@
+<Python Library Requirement>
+
+brian2
+
+
+#Main experiment
+
+master file: implement.py  - start calculation with parallel computing 
+
+wave+Dt:  ff_xor_nobl.py
+wave only: ff_xor_nowvbl.py
+Dt only:  ff_xor_nostbl.py
+conventional: ff_xor_org.py
+
+
+###Output file
+
+- rnxrsetup_xxxxx.pkl
+ii1: An array of neuron index of pre-sinaptic neurons
+jj1: An array of neuron index of post-sinaptic neurons
+nrnx: An array of X-axis positions in order of the neuron index
+nrny: An array of Y-axis positions in order of the neuron index
+input_indices: An array of neuron index at external stimuli
+input_times: An array of external input timing
+
+- rnxrresult_xxxxx.pkl
+exc_s.s: An array of synaptic weights at the last state
+weighte_init: An array of synaptic weights at the initial setting
+Mdopa.prefer: the value of correct (= 1) or wrong (= 0) at each trial.
+Mdopa.crr: the value of 1-Novelty
+
+
+
+#Analysis
+
+analysis file: analysis.py
+
+
+###Output file
+
+- rn14_sum.pkl  
+allprefer: successful rate
